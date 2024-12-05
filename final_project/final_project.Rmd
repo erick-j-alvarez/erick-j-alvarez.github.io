@@ -356,12 +356,12 @@ corr_matrix |>
 
 ```
 
-## Predicting Total Deaths
-After having viewed and interpreted different statistical measures of the COVID data, I feel it would be best served if we attempt to use what we learned from the correlations between variables to try to predict the most important metric in these surveys: total deaths.
+# **Predictive Modeling**
+After having viewed and interpreted different statistical measures of the COVID data, I feel it would be best served if we attempt to use what we learned from the correlations between variables to try to predict the most important metric in these surveys: **total deaths**.
 
 The following consists of the painstaking steps to produce a linear regression model and make predictions on the total number of deaths found in this data set. 
 
-### 1) Preprocessing the Data 
+## 1) Preprocessing the Data 
 Before building a model, it is best to preprocess the data in order to clear out any missing values and creating any relevant features we may need to allow for more specific modeling. In this case: 
 
 - deaths_per_million
@@ -385,7 +385,7 @@ model_covid_world_dat <- covid_world_dat |>
 
 To avoid redundancy and clutter, I will not be including any output, just the code above. 
 
-### 2) Training the Linear Regression Model 
+## 2) Training the Linear Regression Model 
 We will now build a linear regression model to predict total_deaths based on the above features. This linear regression should help us understand the relation between the response (total_deaths) and predictor values (everything else we made). 
 
 ```{r}
@@ -411,7 +411,7 @@ The output summary of the model tells us:
   - Measures how well the model fits the data
     - An R-squared value closer to 1 means the model explains most of the variability in total_deaths 
 
-### 3) Model Evaluation 
+## 3) Model Evaluation 
 We will now proceed to evaluate the model according to Root Mean Squared Error (RMSE). This tells us, on average, how far off our predictions are. 
 
 ```{r}
@@ -426,7 +426,7 @@ print(paste("RMSE:", round(rmse, 2)))
 
 A lower RMSE indicates better model performance. For example, an RMSE of 500 means that, on average, the model's predictions are off by 500 deaths. 
 
-### 4) Model Interpreation 
+## 4) Model Interpreation 
 The coefficients will us how strongly each predictor variable affects total_deaths.
 
 ```{r}
@@ -437,7 +437,7 @@ coef(model)
 
 For example, if total_cases has a large positive coefficient, this means that as the number of cases increases, so does the number of deaths. If population has a negative coefficient, this could suggest that countries with larger populations have relatively fewer deaths compared to smaller countries, depending on other factors.
 
-### 5) Model Tuning 
+## 5) Model Tuning 
 Something many people, including myself, don't do is cross-validation to tune our model and avoid overfitting. 
 
 We can also use cross-validation to tune the model and avoid overfitting (performs well on the training data but not very well on unseen data). This is done by dividing the data into training sets to check if the model generalizes well to other data.
@@ -463,7 +463,7 @@ print(paste("Test RMSE:", round(rmse_cv, 2)))
 
 Fantastic! The RMSE for these training tests came out the same as the previous one. 
 
-### 6) Visualization of Predictions vs. Actuals
+## 6) Visualization of Predictions vs. Actuals
 Finally, let's visualize how well our model's predictions match the actual total_deaths
 
 ```{r}
