@@ -1,7 +1,5 @@
 ---
-title: "Website"
-author: "Erick Alvarez"
-date: "2024-11-07"
+title: "The Alvarez Lab"
 output: html_document
 ---
 
@@ -9,22 +7,16 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## [ABOUT ME & RESEARCH](./about_me/about_me.html) | [CV](./about_me/resume_alvarez.pdf) | [BIOL 3100 - Final Project](./final_project/final_project.html)##
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Erick J. Alvarez: Bioinformatician and Chill Guy #
+Jersey born and now based in Orem, UT; loving science and living life while breaking some hearts along the way.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r, out.width="60%", echo = FALSE}
+knitr::include_graphics("./media/headshot.jpg")
 
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
+Welcome to my website! Feel free to explore my previous/current research, resume, and my final project for BIOL 3100 (Data Analysis for Biologists). 
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Any questions? Email alvareer99@gmail.com for further inquiries.
